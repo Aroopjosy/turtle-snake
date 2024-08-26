@@ -2,11 +2,9 @@
 
 import rclpy
 import math
-import random
 from rclpy.node import Node
-from std_msgs.msg import String
 from turtlesim.msg import Pose
-from turtlesim.srv import Kill, Spawn
+from turtlesim.srv import Kill
 from geometry_msgs.msg import Twist
 from turtle_snake.msg import TurtleArray
 from turtle_snake.srv import CatchTurtle
@@ -34,21 +32,9 @@ class TurtleControllerNode(Node):
 
     def alive_turtle_callback(self, msg):
         if len(msg.turtles) > 0:
-            # print("bitte count :", self.bite_counter_)
             self.bite_turtle_ = msg.turtles[0]
-
         else:
-
             self.get_logger().info(f"bite turtle not added")
-
-    # def call_turtle_kill(self, turtle_name):
-    #     while not self.turtle_kill_client.wait_for_service():
-    #         self.get_logger().info("wait for kill server to online")
-
-    #     request = Kill.Request()
-    #     request.name = turtle_name
-    #     future = self.turtle_kill_client.call_async(request)
-    #     future.add_done_callback(self)
 
     def call_catch_turtle_service(self, turtle_name):
         while not self.catch_turtle_client.wait_for_service(0.1):
@@ -68,8 +54,6 @@ class TurtleControllerNode(Node):
         except Exception as e:
             self.get_logger().info("turtle killed : %s ",e)
 
-
-
     def timer_callback(self):
         if self.pose_ is None or self.bite_turtle_ is None:
             self.get_logger().info("looking for turtle...")
@@ -78,13 +62,11 @@ class TurtleControllerNode(Node):
         dist_x = self.bite_turtle_.x- self.pose_.x
         dist_y = self.bite_turtle_.y - self.pose_.y
         distance = math.sqrt(dist_x * dist_x + dist_y * dist_y)
-       
         msg = Twist()
-        
+
         if distance > 0.5:
             #position
             msg.linear.x = distance
-
             #orientation
             angle_to_goal = math.atan2(dist_y, dist_x)
             diff = angle_to_goal - self.pose_.theta
@@ -99,16 +81,11 @@ class TurtleControllerNode(Node):
         else:
             msg.linear.x = 0.0
             msg.angular.z = 0.0
-            # self.get_logger().info("kill turtle Name : %s", self.bite_turtle_.name)
             self.get_logger().info(f"Kill turtle Name: {self.bite_turtle_.name}")
             self.call_catch_turtle_service(self.bite_turtle_.name)
-
-
+            self.bite_turtle_ =None
 
         self.cmd_vel_publisher_.publish(msg)
-
-        
-
 
 def main():
     rclpy.init()
@@ -118,6 +95,7 @@ def main():
 
     except KeyboardInterrupt:
         node.get_logger().info('Keyboard Interrupt (SIGINT)')
+
     finally:
         node.destroy_node()
         rclpy.shutdown()
