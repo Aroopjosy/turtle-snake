@@ -18,11 +18,18 @@ def generate_launch_description():
         Node(
             package='turtle_snake',
             executable='turtle_spawn_node.py',
-            name='turtle_creater',
+            name='turtle_spawner',
+            parameters=[
+                {'turtle_prefix': 'my_turtle'},
+                {'spawm_frequency': 2.0}
+            ]
         ),
         Node(
             package='turtle_snake',
             executable='turtle_controller_node.py',
             name='turtle_controller',
+            parameters=[
+                {'catch_closest_turtle' : True}
+            ]
         )
   ])

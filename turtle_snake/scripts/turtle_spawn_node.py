@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-from functools import partial
-
 import rclpy
 import math
 import random
@@ -14,14 +12,19 @@ class TurtleSpawner(Node):
     def __init__(self):
 
         super().__init__('turtle_spawner')
-        self.turtle_name_prefix = 'turtle'
+
+        self.declare_parameter('turtle_prefix', 'turtle')
+        self.declare_parameter('spawm_frequency', 1.0)
+
+        self.turtle_name_prefix = self.get_parameter('turtle_prefix').value
+        self.spawn_frequency_ = self.get_parameter('spawm_frequency').value
         self.counter = 1
         self.alive_turtles_ = []
         self.turtles_publisher = self.create_publisher(TurtleArray, 'alive_turtles', 10)
         self.client = self.create_client(Spawn, 'spawn')
         self.turtle_kill_client = self.create_client(Kill, 'kill')
         self.catch_turtle_service_ = self.create_service(CatchTurtle, 'catch_turtle', self.catch_turtle_service_callback)
-        self.create_timer(2.0, self.spawn_new_turtle)
+        self.create_timer(self.spawn_frequency_, self.spawn_new_turtle)
 
 
 

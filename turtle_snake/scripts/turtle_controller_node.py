@@ -15,26 +15,45 @@ class TurtleControllerNode(Node):
 
         super().__init__('turtle_controller')
 
-        self.goal_x = 8.0
-        self.goal_y = 4.0
+        self.declare_parameter("catch_closest_turtle", True)
+
         self.pose_ = None
         self.bite_turtle_ = None
-        self.bite_counter_  = 0
-        self.create_subscription(Pose, '/master/pose', self.turtle_pose_callback, 10)
+        self.catch_closest_turtle = self.get_parameter('catch_closest_turtle').value
         self.cmd_vel_publisher_ = self.create_publisher(Twist, 'master/cmd_vel', 10)
+        self.create_subscription(Pose, '/master/pose', self.turtle_pose_callback, 10)
         self.create_subscription(TurtleArray, 'alive_turtles', self.alive_turtle_callback, 10)
-        self.timer = self.create_timer(0.1, self.timer_callback,)
         self.turtle_kill_client = self.create_client(Kill, 'kill')
         self.catch_turtle_client = self.create_client(CatchTurtle, 'catch_turtle')
+        self.timer = self.create_timer(0.1, self.timer_callback,)
+
 
     def turtle_pose_callback(self, msg):
         self.pose_ = msg
 
     def alive_turtle_callback(self, msg):
         if len(msg.turtles) > 0:
-            self.bite_turtle_ = msg.turtles[0]
+            if self.catch_closest_turtle:
+                closest_turtle = None
+                closest_turtle_distance = None
+
+                for turtle in msg.turtles:
+                    dist_x = turtle.x- self.pose_.x
+                    dist_y = turtle.y - self.pose_.y
+                    distance = math.sqrt(dist_x * dist_x + dist_y * dist_y)
+
+                    if closest_turtle is None or distance < closest_turtle_distance:
+                        closest_turtle = turtle
+                        closest_turtle_distance = distance
+
+                self.bite_turtle_ = closest_turtle
+                print("==============================================")
+            else:
+                self.bite_turtle_ = msg.turtles[0]
+
         else:
             self.get_logger().info(f"bite turtle not added")
+
 
     def call_catch_turtle_service(self, turtle_name):
         while not self.catch_turtle_client.wait_for_service(0.1):
@@ -52,7 +71,7 @@ class TurtleControllerNode(Node):
                 self.get_logger().info("turtle killed")
 
         except Exception as e:
-            self.get_logger().info("turtle killed : %s ",e)
+            self.get_logger().warn("turtle kill erorr : %s ",e)
 
     def timer_callback(self):
         if self.pose_ is None or self.bite_turtle_ is None:
