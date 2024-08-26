@@ -1,0 +1,233 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-258691987e7deb3c6235.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"build" : "turtle_snake__py",
+					"jsonFile" : "directory-turtle_snake__py-Debug-26fafc824503bf432d1e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "build/turtle_snake__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "turtle_snake",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_turtle_snake_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_turtle_snake_egg-Debug-6ae81074b3595ea7c06f.json",
+					"name" : "ament_cmake_python_build_turtle_snake_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_turtle_snake::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_turtle_snake-Debug-cef415e854d6275f1c6c.json",
+					"name" : "ament_cmake_python_copy_turtle_snake",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "turtle_snake::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-turtle_snake-Debug-3123270fc408dc3819ad.json",
+					"name" : "turtle_snake",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "turtle_snake__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-turtle_snake__cpp-Debug-d0e49147b92dbcd11b1f.json",
+					"name" : "turtle_snake__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "turtle_snake__py::@de6afdd7da1d378fef07",
+					"jsonFile" : "target-turtle_snake__py-Debug-230057a097036980d33b.json",
+					"name" : "turtle_snake__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "turtle_snake__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-turtle_snake__rosidl_generator_c-Debug-f3005e65c291b3a3a9e1.json",
+					"name" : "turtle_snake__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "turtle_snake__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-turtle_snake__rosidl_generator_py-Debug-ce9166c39b41f194b996.json",
+					"name" : "turtle_snake__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "turtle_snake__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-turtle_snake__rosidl_typesupport_c-Debug-5147b257658307c5a79b.json",
+					"name" : "turtle_snake__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "turtle_snake__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-turtle_snake__rosidl_typesupport_c__pyext-Debug-0dd7e1f8c03ec69113f0.json",
+					"name" : "turtle_snake__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "turtle_snake__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-turtle_snake__rosidl_typesupport_cpp-Debug-2f5965a9f42e85362375.json",
+					"name" : "turtle_snake__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "turtle_snake__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-turtle_snake__rosidl_typesupport_fastrtps_c-Debug-eaafebbd16ca6e81e06c.json",
+					"name" : "turtle_snake__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "turtle_snake__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-turtle_snake__rosidl_typesupport_fastrtps_c__pyext-Debug-2b1be7eeba5b1e8cc29c.json",
+					"name" : "turtle_snake__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "turtle_snake__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-turtle_snake__rosidl_typesupport_fastrtps_cpp-Debug-5057d4aad0c6a13f7fd9.json",
+					"name" : "turtle_snake__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "turtle_snake__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-turtle_snake__rosidl_typesupport_introspection_c-Debug-e3ebe2e3585775902ead.json",
+					"name" : "turtle_snake__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "turtle_snake__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-turtle_snake__rosidl_typesupport_introspection_c__pyext-Debug-2f366e7814aa1be9e5ed.json",
+					"name" : "turtle_snake__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "turtle_snake__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-turtle_snake__rosidl_typesupport_introspection_cpp-Debug-6f23e666cb0f32b66763.json",
+					"name" : "turtle_snake__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "turtle_snake_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-turtle_snake_uninstall-Debug-e069687b539470aca4b8.json",
+					"name" : "turtle_snake_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Debug-804f5489622e17351459.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/aroop/turtle_ws/src/turtle_snake/build",
+		"source" : "/home/aroop/turtle_ws/src/turtle_snake"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

@@ -15,9 +15,14 @@ def generate_launch_description():
                 ('/turtle1/pose', '/master/pose')
             ]
         ),  
-        # Node(
-        #     package='turtlesim',
-        #     executable='turtle_teleop_key',
-        #     name='turtle_controller',
-        # )
+        Node(
+            package='turtle_snake',
+            executable='turtle_spawn_node.py',
+            name='turtle_creater',
+        ),
+        Node(
+            package='turtle_snake',
+            executable='turtle_controller_node.py',
+            name='turtle_controller',
+        )
   ])

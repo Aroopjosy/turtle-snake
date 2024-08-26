@@ -1,0 +1,8 @@
+{
+  "package_name": "turtle_snake",
+  "non_idl_tuples": [
+    "/home/aroop/turtle_ws/src/turtle_snake:msg/Turtle.msg",
+    "/home/aroop/turtle_ws/src/turtle_snake:msg/TurtleArray.msg",
+    "/home/aroop/turtle_ws/src/turtle_snake:srv/CatchTurtle.srv"
+  ]
+}

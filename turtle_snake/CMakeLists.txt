@@ -10,17 +10,23 @@ find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
+find_package(turtlesim REQUIRED)
+find_package(geometry_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
-# ament_python_install_package(${PROJECT_NAME})
+
 
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Turtle.msg"
   "msg/TurtleArray.msg"
+
+
+  "srv/CatchTurtle.srv"
 )
 
 # Install Python modules
+# ament_python_install_package(${PROJECT_NAME})
 
 # Install Python executables
 install(PROGRAMS

@@ -1,0 +1,13 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from turtle_snake/msg/TurtleArray.msg
+// generated code does not contain a copyright notice
+
+#include "turtle_snake/msg/Turtle.idl"
+
+module turtle_snake {
+  module msg {
+    struct TurtleArray {
+      sequence<turtle_snake::msg::Turtle> turtles;
+    };
+  };
+};
