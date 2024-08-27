@@ -1,5 +1,8 @@
 # Turtle Catcher Simulation
 
+![ROS 2](https://img.shields.io/badge/ROS%202-22314E?style=for-the-badge&logo=ros&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+
 This ROS 2 project demonstrates a turtle-catching simulation using the `turtlesim` package. The goal is to catch a turtle that moves around the screen autonomous control.
 
 ## Demo
