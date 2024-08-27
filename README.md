@@ -4,15 +4,13 @@ This ROS 2 project demonstrates a turtle-catching simulation using the `turtlesi
 
 ## Demo
 
-![Demo Video](./demo.mp4)
+![Watch the demo video](https://github.com/Aroopjosy/turtle-snake/blob/main/demo.mp4)
 
-[![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https:/https://www.youtube.com/watch?v=YOUR_VIDEO_ID/www.youtube.com/watch?v=YOUR_VIDEO_ID)
 
 *Click on the image above to watch the demo video.*
 
 ## Features
 
-- Control the turtle using keyboard commands.
 - Automated turtle-catching algorithm.
 - Easy setup and installation.
 
