@@ -1,10 +1,10 @@
 # Turtle Catcher Simulation
 
-This ROS 2 project demonstrates a turtle-catching simulation using the `turtlesim` package. The goal is to catch a turtle that moves around the screen using keyboard commands or autonomous control.
+This ROS 2 project demonstrates a turtle-catching simulation using the `turtlesim` package. The goal is to catch a turtle that moves around the screen autonomous control.
 
 ## Demo
 
-![Demo Video](demo.mp4)
+![Demo Video](./demo.mp4)
 
 [![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https:/https://www.youtube.com/watch?v=YOUR_VIDEO_ID/www.youtube.com/watch?v=YOUR_VIDEO_ID)
 
@@ -24,8 +24,23 @@ This ROS 2 project demonstrates a turtle-catching simulation using the `turtlesi
 - **Ubuntu 22.04**
 
 ### Steps
-
-1. **Clone the repository:**
+1.**Create New  Workspace**
    ```bash
-   git clone https://github.com/yourusername/turtle-catcher.git
-   cd turtle-catcher
+   mkdir -p turtle_ws/src
+   cd turtle_ws/src
+   ```
+2.**Clone the repository:**
+   ```bash
+   git clone https://github.com/Aroopjosy/turtle-snake.git .
+   cd ..
+   ```
+3.**Build Workspace**
+ ```bash
+   colcon build --packages-select turtle_snake --symlink-install
+   ```
+4.**Source & Run**
+   ```bash
+   source install/setup.bash
+   ros2 launch turtle_snake turtle_snake_launch.py
+   ```
+
