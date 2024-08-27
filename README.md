@@ -4,7 +4,7 @@ This ROS 2 project demonstrates a turtle-catching simulation using the `turtlesi
 
 ## Demo
 
-![Watch the demo video](https://github.com/Aroopjosy/turtle-snake/blob/main/demo.mp4)
+![Watch the demo video](https://github.com/Aroopjosy/turtle-snake/blob/main/demo.gif)
 
 
 *Click on the image above to watch the demo video.*
