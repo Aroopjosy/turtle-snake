@@ -32,7 +32,6 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 install(PROGRAMS
   scripts/turtle_controller_node.py
   scripts/turtle_spawn_node.py
-  scripts/test_node.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
